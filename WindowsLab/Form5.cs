@@ -17,6 +17,17 @@ namespace WindowsLab
             InitializeComponent();
         }
 
+/*Caso 5.- 
+Programar métodos: 
+-->Se ingresa el nombre del usuario, el sexo y el tipo de
+usuario. 
+-->Validar el tipo de usuario (Rol): Administrador, estándar e
+invitados.  
+-->Validar su sexo. 
+--> Imprimir el
+nombre del usuario, el sexo y el tipo de usuario. Por ejemplo “Usuario:
+Gabriela – Sexo: Femenino – Rol: Administrador”*/
+
         private void btnMostrar_Click(object sender, EventArgs e)
         {
             string nombre = txtNombre.Text;
@@ -24,6 +35,7 @@ namespace WindowsLab
             string rol = txtUsuario.Text;
             validarRol(rol);
             validarSexo(sexo);
+            mostrar(nombre, sexo, rol);
         }
 
         #region MyRegion
@@ -37,11 +49,16 @@ namespace WindowsLab
         }
         public void validarSexo(string sexo)
         {
-            if( sexo != femenino && sexo != masculino)
+            if( sexo != "femenino" && sexo != "masculino")
             {
                 MessageBox.Show("EL SEXO INGRESADO ES INCORRECTO, POR FAVOR INGRESAR FEMENINO O MASCULINO");
 
             }
+        }
+
+        public void mostrar (string nombre, string sexo, string rol)
+        {
+            MessageBox.Show("Usauario: " + nombre + "\nSexo: " + sexo + "\nRol: " + rol);
         }
 
         #endregion
